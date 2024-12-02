@@ -1,37 +1,45 @@
 class Operators {
     public:
         //Method for addition
-        int addition(int a, int b) {
+        double addition(double a, double b) {
             return a + b;
         }
         
         //Method for subtraction
-        int subtraction(int a, int b) {
+        double subtraction(double a, double b) {
             return a - b;   
         }
 
         //Method for multiplication
-        int multiplication(int a, int b) { 
+        double multiplication(double a, double b) { 
             return a * b;
         }
 
         //Method for division
-        int division(int a, int b) {
-            return a / b;
+        double division(double a, double b) {
+            if (b != 0) {
+                return a / b;
+            } else {
+                return 0;
+            }
         }
 
         //Method for modular
-        int modular(int a, int b) {
-            return a % b;
+        double modular(double a, double b) {
+            if (b > 0) {
+                return a % b;    
+            } else {
+                return -1;
+            }
         }
         
         //Method for exponents
         //Takes in two number: first number is the base number the second is the power
-        int exponents(int a, int b) {
+        double exponents(double a, double b) {
             int c = a;
             for(int i = 0; i < b; i++){
                 c = multiplication(c, a);
-            };
+            }
             return c;
         }
 
