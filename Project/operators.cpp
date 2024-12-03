@@ -25,7 +25,7 @@ class Operators {
         }
 
         //Method for modular
-        double modular(double a, double b) {
+        int modular(int a, int b) {
             if (b > 0) {
                 return a % b;    
             } else {

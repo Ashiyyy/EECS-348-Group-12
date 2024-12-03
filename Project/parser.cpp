@@ -41,13 +41,7 @@ class Parser {
         void parse(vector<char> token_vec) {
             vector<char> list;
             while (token_vec.size() > 0) {
-                int i = token_vec.find('*')
-            }
-        }
-
-        bool check_parenthises(vector<char> token_vec) {
-            if (std::find(token_vec, '(')) {
-
+                int i = 0;
             }
         }
 };

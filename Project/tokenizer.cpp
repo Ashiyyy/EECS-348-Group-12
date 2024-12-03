@@ -27,40 +27,26 @@ class Tokenizer {
             bool valid = true;
             int i;
             int count = 0;
-            std::regex regex ("\\*\\*")
-
+            std::regex regex ("\\*\\*");
             //checks that every char is valid in a math expression
             try {
                 //replacing ** with ^
                 input = regex_replace(input,regex,"^");
-            
-            int pop_length = input.length();
-            for (i = 0; i < pop_length; i++) {
-                char c = input.substr(i , 1)[0];
-                if (c == '*'){
-                    if (input.substr(i + 1, 1)[0] == '*'){
-                        input.pop(i+1)
-                        input[i] = '^';
-                        pop_length--;
+                for(i = 0; i < input.length(); i++) {
+                    char c = input.substr(i, 1)[0];
+                    if(legal.find(c) == string::npos) {
+                        valid = false;
+                    } else if (operators.find(c) == string::npos && operators.find(input.substr(i + 1, 1)[0] == string::npos)) {
+                        valid = false;
+                    } else if (c == '(') {
+                        count++;
+                    } else if (c == ')') {
+                        count--;
                     }
                 }
-            }
-                
-            for(i = 0; i < input.length(); i++) {
-                char c = input.substr(i, 1)[0];
-                if(legal.find(c) == string::npos) {
+                if (count != 0) {
                     valid = false;
-                } else if (operators.find(c) == string::npos && operators.find(input.substr(i + 1, 1)[0] == string::npos)) {
-                    valid = false;
-                } else if (c == '(') {
-                    count++;
-                } else if (c == ')') {
-                    count--;
                 }
-            }
-            if (count != 0) {
-                valid = false;
-            }
             } catch(...) {
                 valid = false;
             }
