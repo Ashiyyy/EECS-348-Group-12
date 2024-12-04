@@ -140,4 +140,5 @@ void test_tokenize() {
     test_binary_ops_tokenize();
     test_parenthesis_tokenize();
     test_syntax_error();
+    test_tokenize_handles_white_space();
 }
