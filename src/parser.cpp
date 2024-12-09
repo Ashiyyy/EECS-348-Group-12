@@ -137,10 +137,12 @@ ASTNode parse(const vector<Token>& tokens) {
                 bool is_unary = false;
                 //determine if unary with context
                 if (token.type == TokenType::Minus) {
-                    if (i == 0 || tokens[i - 1].type == TokenType::LeftParen ||
+                    if (
+                        i == 0 || tokens[i - 1].type == TokenType::LeftParen ||
                         tokens[i - 1].type == TokenType::Plus || tokens[i - 1].type == TokenType::Minus ||
                         tokens[i - 1].type == TokenType::Multiply || tokens[i - 1].type == TokenType::Divide ||
-                        tokens[i - 1].type == TokenType::Exponent) {
+                        tokens[i - 1].type == TokenType::Exponent || tokens[i - 1].type == TokenType::Modulo
+                        ) {
                         is_unary = true;
                     }
                 }
