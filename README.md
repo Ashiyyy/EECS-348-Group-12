@@ -23,7 +23,7 @@ Glossary of terms
 
 The glossary is documented on our github.
 
-# FAQ 
+## FAQ 
 Q1: Does this program work on a Mac?
 
 A1: Yes, compile with G++ or Clang with C++ version 17. 
