@@ -18,3 +18,7 @@ test: $(EXEC)
 #make run
 run: $(EXEC)
 	./$(EXEC)
+#make cycle_run
+cycle_run:
+	g++ -std=c++17 -o $(EXEC) $(SRC)
+	./$(EXEC)
