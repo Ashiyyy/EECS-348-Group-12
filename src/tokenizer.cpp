@@ -4,6 +4,7 @@
 #include <variant>
 #include <iostream>
 #include "tokenizer.h"
+#include <algorithm>
 
 #ifndef TOKENIZER_CPP
 #define TOKENIZER_CPP
@@ -14,7 +15,7 @@ using namespace std;
 vector<Token> tokenize(string equation) {
     vector<Token> tokens;
     //remove all white space
-    equation.erase(remove(equation.begin(), equation.end(), ' '), equation.end());
+    equation.erase(std::remove(equation.begin(), equation.end(), ' '), equation.end());
     //for each char
     for (int i = 0; i < equation.size(); i++) {
         char c = equation[i];
