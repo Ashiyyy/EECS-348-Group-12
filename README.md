@@ -1,5 +1,5 @@
 # EECS 348 Term Project Calculator
-Group 12
+Authors: EECS Group 12
 
 ## Purpose 
 The overall purpose of this project was to create a basic calculator that followed PEMDAS (see glossary for definition). taking in there equations with the basic operations (+,-,/,*,**,%,()) with more details in Getting Started. The program lets the user input in their equation and gets the solution but it also tells them when they do something wrong i.e. if they divide by zero it tells them they can not divide by zero. This all can be accessed on our GetHub to  run on cycle servers run "make cycle_run". 
