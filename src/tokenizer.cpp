@@ -21,7 +21,13 @@ vector<Token> tokenize(string equation) {
         char c = equation[i];
         //match char
         if (c == '+') {
-            tokens.push_back({TokenType::Plus, 0});
+            //filter the weird case where +N is considered valid. 
+            if (i > 0) {
+                if (equation[i - 1] == '(') {
+                    continue;
+                }
+                tokens.push_back({TokenType::Plus, 0});
+            }
         } else if (c == '%') {
             tokens.push_back({TokenType::Modulo, 0});
         } else if (c == '-') {
@@ -80,13 +86,12 @@ void test_numbers_tokenize() {
 void test_binary_ops_tokenize() {
     //test tokenize "+-*/^"
     vector<Token> expected = {
-        {TokenType::Plus, 0},
         {TokenType::Minus, 0},
         {TokenType::Multiply, 0},
         {TokenType::Divide, 0},
         {TokenType::Exponent, 0}
     };
-    vector<Token> result = tokenize("+-*/^");
+    vector<Token> result = tokenize("-*/^");
     assert(expected == result);
 }
 
