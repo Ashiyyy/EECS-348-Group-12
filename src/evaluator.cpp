@@ -22,6 +22,9 @@ float evaluate(const ASTNode& node) {
         //perform the operation
         switch (binary_node->op) {
             case BinaryOperator::Modulo:
+                if (right_value == 0) {
+                    throw runtime_error("Invalid Modulo by zero");
+                }
                 return (int)left_value % (int)right_value;
             case BinaryOperator::Plus:
                 return left_value + right_value;
