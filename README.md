@@ -25,11 +25,14 @@ The glossary is documented on our github.
 
 # FAQ 
 Q1: Does this program work on a Mac?
+
 A1: Yes, compile with G++ or Clang with C++ version 17. 
 
 Q2: Who can I contact for support?
-A2: This program comes as is. If you discover an issue, please create an issue on the github page. 
+
+A2: This program comes as is. If you discover an issue, please create an issue on the repo. 
 
 Q3: Why does it start with parenthesis?
+
 A3: The calculator follows the laws of PEMDAS where Parenthesis is the highest priority of operations
 
