@@ -31,7 +31,17 @@ vector<Token> tokenize(string equation) {
         } else if (c == '%') {
             tokens.push_back({TokenType::Modulo, 0});
         } else if (c == '-') {
+            int count = 0;
+            while (i < equation.size() && equation[i] == '-') {
+                count++;
+                i++;
+            }
+            i--;
+            if (count % 2 != 0) {
             tokens.push_back({TokenType::Minus, 0});
+            } else {
+            continue;
+            }
         } else if (c == '*') {
             //determine if its exponent or multiplication by checking the next char
             if (i + 1 < equation.size() && equation[i + 1] == '*') {
