@@ -40,7 +40,7 @@ vector<Token> tokenize(string equation) {
             if (count % 2 != 0) {
             tokens.push_back({TokenType::Minus, 0});
             } else {
-            continue;
+            tokens.push_back({TokenType::Plus, 0});
             }
         } else if (c == '*') {
             //determine if its exponent or multiplication by checking the next char
