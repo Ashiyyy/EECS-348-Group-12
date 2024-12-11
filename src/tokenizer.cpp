@@ -37,10 +37,24 @@ vector<Token> tokenize(string equation) {
                 i++;
             }
             i--;
-            if (count % 2 != 0) {
-            tokens.push_back({TokenType::Minus, 0});
+            //checks if the "-" next to an operator or "(" so no "+" is needed
+            if (tokens.empty() || tokens.back().type == TokenType::Plus || 
+            tokens.back().type == TokenType::Minus || 
+            tokens.back().type == TokenType::Multiply || 
+            tokens.back().type == TokenType::Divide || 
+            tokens.back().type == TokenType::Exponent || 
+            tokens.back().type == TokenType::LeftParen) {
+                if (count % 2 != 0) {
+                    //only if negitive
+                    tokens.push_back({TokenType::Minus, 0});
+                }
+            //next to a num or ")" so "+" is needed
             } else {
-            tokens.push_back({TokenType::Plus, 0});
+                if (count % 2 != 0) {
+                    tokens.push_back({TokenType::Minus, 0});
+                } else {
+                    tokens.push_back({TokenType::Plus, 0});
+                }
             }
         } else if (c == '*') {
             //determine if its exponent or multiplication by checking the next char
