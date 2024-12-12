@@ -8,7 +8,7 @@ The overall purpose of this project was to create a basic calculator that follow
 The Calculator software takes in an equation and returns a solution following PEMDAS. The purpose is to complete a given equation promptly. The calculator's features include checking that the equation is valid. Dividing by zero will raise an error. It also allows the user to get their solution with decimals included. 
 
 ## Installation
-To install the calculator, clone the repo and run the make file from source using ``make %filepath%``. Once the program is running just enter in your equation when prompted and hit enter and it will give you the solution. make defaults to using clang. To run on cycle servers run ``make cycle_run``. This builds and runs the calculator. ``cd src; make cycle_run`` 
+To install the calculator, clone the repo and run the make file from source using ``make {command}``. Once the program is running just enter in your equation when prompted and hit enter and it will give you the solution. make defaults to using clang. To run on cycle servers run ``make cycle_run``. This builds and runs the calculator. ``cd src; make cycle_run`` 
 ![image](https://github.com/user-attachments/assets/b39f5c2d-2fa6-4430-bc4f-925004e71d9c)
 
 ## Getting started
