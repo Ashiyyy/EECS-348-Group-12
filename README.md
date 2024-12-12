@@ -9,6 +9,7 @@ The Calculator software takes in an equation and returns a solution following PE
 
 ## Installation
 To install the calculator, clone the repo and run the make file from source using ``make %filepath%``. Once the program is running just enter in your equation when prompted and hit enter and it will give you the solution. make defaults to using clang. To run on cycle servers run ``make cycle_run``. This builds and runs the calculator. ``cd src; make cycle_run`` 
+![image](https://github.com/user-attachments/assets/b39f5c2d-2fa6-4430-bc4f-925004e71d9c)
 
 ## Getting started
 After running the program from the make file from the source the user is asked to enter an equation. The user needs to follow some basic rules when entering their problem. If the user is using addition they will press “+”, subtraction is “-”, multiplication “*”, division is “/”, exponents are “**” or "^", the remainder is “%” and if they want to include parentheses they will use “(“ and “)”. See example #4. 
